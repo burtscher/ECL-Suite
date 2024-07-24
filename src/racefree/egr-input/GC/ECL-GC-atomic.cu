@@ -145,7 +145,7 @@ void init(const int nodes, const int edges, const int* const __restrict__ nidx, 
 }
 
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void runLarge(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ posscol, int* const __restrict__ posscol2, int* const __restrict__ color, const int* const __restrict__ wl)
 {
   const int stop = wlsize;
@@ -251,7 +251,7 @@ void runLarge(const int nodes, const int* const __restrict__ nidx, const int* co
 }
 
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void runSmall(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ posscol, int* const __restrict__ color)
 {
   const int thread = threadIdx.x + blockIdx.x * ThreadsPerBlock;

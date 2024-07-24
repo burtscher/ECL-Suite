@@ -66,7 +66,7 @@ static __device__ int topL, posL, topH, posH;
 
 /* initialize with first smaller neighbor ID */
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void init(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ nstat)
 {
   const int from = threadIdx.x + blockIdx.x * ThreadsPerBlock;
@@ -105,7 +105,7 @@ static inline __device__ int representative(const int idx, int* const __restrict
 
 /* process low-degree vertices at thread granularity and fill worklists */
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void compute1(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ nstat, int* const __restrict__ wl)
 {
   const int from = threadIdx.x + blockIdx.x * ThreadsPerBlock;
@@ -158,7 +158,7 @@ void compute1(const int nodes, const int* const __restrict__ nidx, const int* co
 
 /* process medium-degree vertices at warp granularity */
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void compute2(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ nstat, const int* const __restrict__ wl)
 {
   const int lane = threadIdx.x % warpsize;
@@ -200,7 +200,7 @@ void compute2(const int nodes, const int* const __restrict__ nidx, const int* co
 
 /* process high-degree vertices at block granularity */
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void compute3(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ nstat, const int* const __restrict__ wl)
 {
   __shared__ int vB;
@@ -247,7 +247,7 @@ void compute3(const int nodes, const int* const __restrict__ nidx, const int* co
 
 /* link all vertices to sink */
 
-static __global__ __launch_bounds__(ThreadsPerBlock, 2048 / ThreadsPerBlock)
+static __global__ __launch_bounds__(ThreadsPerBlock)
 void flatten(const int nodes, const int* const __restrict__ nidx, const int* const __restrict__ nlist, int* const __restrict__ nstat)
 {
   const int from = threadIdx.x + blockIdx.x * ThreadsPerBlock;
@@ -366,7 +366,7 @@ int main(int argc, char* argv[])
   for (int v = 0; v < g.nodes; v++) {
     s1.insert(nodestatus[v]);
   }
-  printf("number of connected components: %d\n", s1.size());
+  printf("number of connected components: %lu\n", s1.size());
 
   /* verification code (may need extra runtime stack space due to deep recursion) */
 
