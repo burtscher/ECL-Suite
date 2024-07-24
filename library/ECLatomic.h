@@ -1,6 +1,9 @@
-BSD 3-Clause License
+/*
+ECLatomic: atomic read and atomic write template functions
 
-Copyright (c) 2024, Yiqian Liu, Avery VanAusdal, and Martin Burtscher
+This file is part of the ECL Suite version 1.0.
+
+Copyright (c) 2024, Yiqian Liu and Martin Burtscher
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -26,3 +29,49 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+URL: The latest version of this code is available at https://github.com/burtscher/ECL-Suite.
+
+Publication: This work is described in detail in the following paper.
+Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024.
+*/
+
+
+#ifndef ECL_ATOMIC
+#define ECL_ATOMIC
+
+#include <cuda/atomic>
+
+template <typename T>
+__device__ inline T atomicRead(T* const addr)
+{
+  return ((cuda::atomic<T>*)addr)->load(cuda::memory_order_relaxed);
+}
+
+template <typename T>
+__device__ inline void atomicWrite(T* const addr, const T val)
+{
+  ((cuda::atomic<T>*)addr)->store(val, cuda::memory_order_relaxed);
+}
+
+void CheckCuda()
+{
+  cudaError_t e;
+  cudaDeviceSynchronize();
+  if (cudaSuccess != (e = cudaGetLastError())) {
+    fprintf(stderr, "CUDA error %d: %s\n", e, cudaGetErrorString(e));
+    exit(-1);
+  }
+}
+
+void CheckCuda(const int line)
+{
+  cudaError_t e;
+  cudaDeviceSynchronize();
+  if (cudaSuccess != (e = cudaGetLastError())) {
+    fprintf(stderr, "CUDA error %d on line %d: %s\n", e, line, cudaGetErrorString(e));
+    exit(-1);
+  }
+}
+
+#endif
