@@ -1,4 +1,6 @@
 /*
+This file is part of the ECL Suite version 1.0.
+
 ECL-APSP code: ECL-APSP is an all-pairs-shortest-paths CUDA implementation of
 the Floyd-Warshall algorithm that is quite fast. It operates on graphs stored
 in binary CSR format.
@@ -28,7 +30,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Authors: Yiqian Liu and Martin Burtscher
+Authors: Yiqian Liu, Avery VanAusdal, and Martin Burtscher
 
 URL: The latest version of this code is available at
 https://cs.txstate.edu/~burtscher/research/ECL-APSP/.

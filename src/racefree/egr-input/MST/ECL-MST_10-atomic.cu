@@ -4,7 +4,7 @@ This file is part of the ECL Suite version 1.0.
 Race-free ECL-MST: This code computes a minimum spanning tree (MST) or a 
 minimum spanning forest (MSF) of an undirected graph.
 
-Copyright (c) 2023-2024, Martin Burtscher, Alex Fallin, and Yiqian Liu
+Copyright (c) 2023-2024, Texas State University. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -30,6 +30,8 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors: Martin Burtscher, Alex Fallin, Yiqian Liu, and Avery VanAusdal
 
 URL: The original version of this code is available at 
 https://cs.txstate.edu/~burtscher/research/ECL-MST/ 

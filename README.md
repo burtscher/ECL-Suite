@@ -1,6 +1,6 @@
 # ECL Suite
 
-This repository hosts a suite of high-performance graph analytics codes for GPUs that have had their data races removed. A full description of the codes and methodology can be found in our paper (see below).
+This repository hosts a suite of high-performance graph analytics codes for GPUs that have had their "benign" data races removed. A full description of the codes and methodology can be found in our paper (see below).
 
 If you use any of the code or results in this repository, please cite the following publication:
 
@@ -12,9 +12,9 @@ This repository includes the codes, inputs, and scripts to run the experiments p
 * All the race-free codes are in the `src/racefree` directory
 * The `library` directory contains the header files
 * The `scripts` directory contains Python scripts that help run the codes, read the run times, and analyze the results, as well as a program that converts MatrixMarket graphs to the ECL format
-* The `download_inputs.sh` Bash script will download and prepare the input graphs used in our experiments
-* The `download_grid.sh` Bash script will download input graphs for the APSP codes
-* The `all_tests.sh` Bash script will perform the experiments. It runs all codes and places their runtime output logs in a new `results/` directory. Then it uses `scripts/analyze_results.py` to calculate the speedups and creates tables and figures in a new `output/` directory.
+* The `download_inputs.sh` Bash script downloads and prepares the input graphs used in our experiments
+* The `download_grid.sh` Bash script downloads input graphs for the APSP codes
+* The `all_tests.sh` Bash script performs the experiments. It runs all codes and places their runtime output logs in a new `results/` directory. Then it uses `scripts/analyze_results.py` to calculate the speedups and creates tables and figures in a new `output/` directory.
 
 ## Installation and Setup
 
@@ -28,7 +28,7 @@ To download and prepare all of the input graphs used in the paper's experiments,
 
     ./download_inputs.sh
     
-The script will create the `inputs-undirected/` and `inputs-directed/` directories and place the input graphs in them.
+The script creates the `inputs-undirected/` and `inputs-directed/` directories and places the input graphs in them.
 
 ## Run Paper Experiments
 
@@ -36,13 +36,13 @@ After acquiring the inputs, to compile and run all codes on all inputs, run:
 
     ./all_tests.sh
 
-The script will run every baseline and race-free code on every appropriate input 9 times by default, then calculate the speedups from baseline to race-free. This takes 1-2 hours for a 2070 Super.
+The script runs every baseline and race-free code on every appropriate input 9 times by default, then calculates the speedups from baseline to race-free. This takes 1-2 hours for a 2070 Super.
 
 The speedups in CSV and graph form can be found in the `output/` directory.
 
 ## Experiment Customization
 
-On a system with multiple GPUs, the `all_tests.sh` script will default to the fastest GPU. To change this, edit the value of `CUDA_VISIBLE_DEVICES` on line 4 of `all_tests.sh`.
+On a system with multiple GPUs, the `all_tests.sh` script defaults to using the fastest GPU. To change this, edit the value of `CUDA_VISIBLE_DEVICES` on line 4 of `all_tests.sh`.
 
 By default, each code is run on each input 9 times, the same number of times we used to generate the paper's results. The median of those 9 runtimes is used for the speedup calculations. If time is a concern, this number can be edited on line 5 of the `all_tests.sh` script.
 

@@ -30,7 +30,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Authors: Ghadeer Alabandi, Evan Powers, Yiqian Liu, and Martin Burtscher
+Authors: Ghadeer Alabandi, Evan Powers, Yiqian Liu, Avery VanAusdal, and Martin Burtscher
 
 URL: The original version of this code is available at
 https://userweb.cs.txstate.edu/~burtscher/research/ECL-GC/.

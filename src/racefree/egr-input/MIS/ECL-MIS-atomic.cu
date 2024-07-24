@@ -33,7 +33,7 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
-Authors: Martin Burtscher, Sindhu Devale, and Yiqian Liu
+Authors: Martin Burtscher, Sindhu Devale, Yiqian Liu, and Avery VanAusdal
 
 URL: The original version of this code is available at
 https://userweb.cs.txstate.edu/~burtscher/research/ECL-MIS/.
