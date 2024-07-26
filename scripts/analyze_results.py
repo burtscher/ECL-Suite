@@ -98,7 +98,7 @@ def parse_runtime_file(filename):
         if num_runs == -1:
             num_runs = len(runtimes)
         elif len(runtimes) != num_runs:
-            raise ValueError(f"Expected {num_runs} runtimes for input '{input_name}', but found {len(runtimes)}.")
+            raise ValueError(f"Expected {num_runs} runtimes for input '{input_name}' in '{filename}', but found {len(runtimes)}.")
 
     return results
 
