@@ -70,7 +70,10 @@ static __global__ void findmins(const int nodes, const int* const __restrict__ n
       const stattype nv = nstat[v];
       if (nv & 1) {
         int i = nidx[v];
-        while ((i < nidx[v + 1]) && ((nv > nstat[nlist[i]]) || ((nv == nstat[nlist[i]]) && (v > nlist[i])))) {
+        while (i < nidx[v + 1]) {
+          const int nli = nlist[i];
+          const stattype nsi = nstat[nli];
+          if (!((nv > nsi) || ((nv == nsi) && (v > nli)))) break;
           i++;
         }
         if (i < nidx[v + 1]) {

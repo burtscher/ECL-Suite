@@ -38,7 +38,7 @@ Authors: Martin Burtscher, Sindhu Devale, Yiqian Liu, and Avery VanAusdal
 URL: The original version of this code is available at
 https://userweb.cs.txstate.edu/~burtscher/research/ECL-MIS/.
 
-Original ublication: This work is described in detail in the following paper.
+Original publication: This work is described in detail in the following paper.
 Martin Burtscher, Sindhu Devale, Sahar Azimi, Jayadharini Jaiganesh, and
 Evan Powers. A High-Quality and Fast Maximal Independent Set Implementation
 for GPUs. ACM Transactions on Parallel Computing, Vol. 5, No. 2, Article 8
