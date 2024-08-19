@@ -4,7 +4,7 @@ This repository hosts a suite of high-performance graph analytics codes for GPUs
 
 If you use any of the code or results in this repository, please cite the following publication:
 
->Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024.
+>Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Graph Analytics Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024.
 
 This repository includes the codes, inputs, and scripts to run the experiments performed in the paper. The repository is laid out as follows.
 
