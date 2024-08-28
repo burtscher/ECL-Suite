@@ -6,6 +6,8 @@ If you use any of the code or results in this repository, please cite the follow
 
 >Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Graph Analytics Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024.
 
+As a side note, you may also be interested in the related suites [Indigo](https://cs.txstate.edu/~burtscher/research/IndigoSuite/), [Indigo2](https://cs.txstate.edu/~burtscher/research/Indigo2Suite/), and [Indigo3](https://github.com/burtscher/Indigo3Suite/).
+
 This repository includes the codes, inputs, and scripts to run the experiments performed in the paper. The repository is laid out as follows.
 
 * All the baseline codes are in the `src/baseline` directory
