@@ -4,9 +4,9 @@ This repository hosts a suite of high-performance graph analytics codes for GPUs
 
 If you use any of the code or results in this repository, please cite the following publication:
 
->Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Graph Analytics Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024.
+>Yiqian Liu, Avery VanAusdal, and Martin Burtscher. Performance Impact of Removing Data Races from GPU Graph Analytics Programs. Proceedings of the IEEE International Symposium on Workload Characterization. September 2024. <!--- [[doi]](https://doi.org/10.21125/edulearn.2024.1136) --> [[pdf]](https://userweb.cs.txstate.edu/~burtscher/papers/iiswc24a.pdf) [[pptx]](https://userweb.cs.txstate.edu/~burtscher/slides/iiswc24a.pptx)
 
-The paper can be found [here](https://userweb.cs.txstate.edu/~burtscher/papers/iiswc24a.pdf). As a side note, you may also be interested in the related suites [Indigo](https://cs.txstate.edu/~burtscher/research/IndigoSuite/), [Indigo2](https://cs.txstate.edu/~burtscher/research/Indigo2Suite/), and [Indigo3](https://github.com/burtscher/Indigo3Suite/).
+You may also be interested in the related suites [Indigo](https://cs.txstate.edu/~burtscher/research/IndigoSuite/), [Indigo2](https://cs.txstate.edu/~burtscher/research/Indigo2Suite/), and [Indigo3](https://github.com/burtscher/Indigo3Suite/).
 
 This repository includes the codes, inputs, and scripts to run the experiments performed in the paper. The repository is laid out as follows.
 
